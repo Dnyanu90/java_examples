@@ -1,4 +1,4 @@
-package com.tecspeak.inheritance;
+package com.tecspeak.inheritance.institute;
 
 public class Student {
     private String name;
