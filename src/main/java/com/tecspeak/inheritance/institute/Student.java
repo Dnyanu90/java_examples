@@ -1,12 +1,15 @@
 package com.tecspeak.inheritance.institute;
 
-public class Student {
+public abstract class Student {
     private String name;
     private int rollno;
 
     public Student(String name, int rollno){
      this.name=name;
      this.rollno=rollno;
+    }
+
+    public Student() {
     }
 
     public String getName() {
@@ -25,4 +28,7 @@ public class Student {
         this.rollno = rollno;
     }
 
+    abstract public double getTotalMarks();
+
+    public abstract void printReportCard();
 }
