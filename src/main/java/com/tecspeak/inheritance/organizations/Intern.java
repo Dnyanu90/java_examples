@@ -3,8 +3,8 @@ package com.tecspeak.inheritance.organizations;
 public class Intern extends Employee{
     private int duration;
 
-    public Intern(int employee_Id, String name, double salary, int duration) {
-        super(employee_Id, name, salary);
+    public Intern(int employee_Id, String name, int duration,double dailyRate) {
+        super(employee_Id, name,dailyRate);
         this.duration = duration;
     }
 
@@ -16,6 +16,6 @@ public class Intern extends Employee{
         this.duration = duration;
     }
     public String getDetails(){
-       return getEmployee_Id()+" "+getName()+" "+getSalary()+" "+ duration;
+       return getEmployee_Id()+" "+getName()+" "+ getDuration()+"" + getDailyRate();
     }
 }

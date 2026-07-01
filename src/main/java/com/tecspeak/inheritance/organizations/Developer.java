@@ -3,8 +3,8 @@ package com.tecspeak.inheritance.organizations;
 public class Developer extends  Employee {
     private String language;
 
-    public Developer(int employee_Id, String name, double salary, String language) {
-        super(employee_Id, name, salary);
+    public Developer(int employee_Id, String name , String language,double dailyRate) {
+        super(employee_Id, name ,dailyRate);
         this.language = language;
     }
 
@@ -21,7 +21,7 @@ public class Developer extends  Employee {
     }
 
 public String getdetils(){
-        return  getEmployee_Id() +" "+ getName()+" "+getSalary()+ " "+language;
+        return  getEmployee_Id() +" "+ getName()+" "+getLanguage()+" "+getDailyRate();
 }
 
 }

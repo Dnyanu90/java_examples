@@ -2,12 +2,9 @@ package com.tecspeak.inheritance.organizations;
 
 public class Manager extends Employee {
   private int teamSize;
-   String dept;
 
-
-
-    public Manager(int team_Size,int employee_Id, String name, double salary) {
-        super(employee_Id, name, salary);
+    public Manager(int team_Size,int employee_Id, String name,double dailyRate) {
+        super(employee_Id, name,dailyRate);
       this .teamSize=team_Size;
     }
 
@@ -19,8 +16,7 @@ public class Manager extends Employee {
         this.teamSize=teamSize;
     }
     public String getDetails(){
-        return  getEmployee_Id()+" "+getName()+" "+getSalary()+" Team Size:"+getTeamSize();
+        return  getEmployee_Id()+" "+getName()+ " Team Size:"+getTeamSize()+" "+getDailyRate();
+    }
     }
 
-
-}
