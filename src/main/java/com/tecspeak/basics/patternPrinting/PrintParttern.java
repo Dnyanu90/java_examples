@@ -63,17 +63,30 @@ public class PrintParttern {
     }
 
     static void XPrinting(int n) {
-        for (int i=1;i<n;i++){
-            for (int j=1;j<n;j++){
-                if (j==i || j==n-i){
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j < n; j++) {
+                if (j == i || j == n - i) {
                     System.out.print("*");
-                }
-                else {
+                } else {
                     System.out.print(" ");
                 }
             }
             System.out.println();
         }
+    }
+
+    static void HPrinting(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (j==1 || j==n-1 || i==n/2) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
     }
 
     public static void main(String[] args) {
@@ -84,7 +97,7 @@ public class PrintParttern {
 //        Pyramid(7);
 //        HolllowRectangle(4);
 //         NumTriangle(5);
-        XPrinting(6);
-
+//        XPrinting(6);
+        HPrinting(6);
     }
 }
