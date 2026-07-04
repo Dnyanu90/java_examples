@@ -22,11 +22,6 @@ public class Fibonacci {
                 arr[1]=1;
             }else
             arr[i]=arr[i-1]+arr[i-2];
-
-
-            {
-
-            }
         }
         return arr;
     }
