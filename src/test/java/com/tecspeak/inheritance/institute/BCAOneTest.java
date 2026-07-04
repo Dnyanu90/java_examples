@@ -8,12 +8,11 @@ public class BCAOneTest {
 
     @Test
     public void testGetToatalMark(){
-        BCAOne student=new BCAOne("Dnyane",1,
+        Student student=new BCAOne("Dnyane",1,
                 50,60,70,
                 48,49,45);
         double total=student.getTotalMarks();
      assertEquals(322,total);
-
     }
     @Test
     public void testTotalMark(){
@@ -22,9 +21,14 @@ public class BCAOneTest {
                 35,57,78);
         double totalMark=student.getTotalMarks();
         assertEquals(396,totalMark);
-
-
     }
 
-
+    @Test
+    public void testGetToatalMarksPercentage(){
+        BCAOne bcaOneStudent=new BCAOne("Dnyane",1,
+                50,60,70,
+                48,49,45);
+        double total=bcaOneStudent.getTotalMarks(600);
+        assertEquals(54,(int)Math.round(total));
+    }
 }

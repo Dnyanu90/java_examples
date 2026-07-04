@@ -8,11 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestDevloper {
     @Test
     public void testDevloperDetails(){
-        Developer devloper=new Developer(3,"Dnyane",23000,"Java");
+        Developer devloper=new Developer(3,"Dnyane","Java",3000.0);
         String result=devloper.getdetils();
 
-        assertEquals("3 Dnyane 23000.0 Java",result);
-
-
+        assertEquals("3 Dnyane Java 3000.0",result);
     }
 }
