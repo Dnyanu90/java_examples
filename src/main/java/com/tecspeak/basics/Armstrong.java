@@ -40,8 +40,21 @@ public class Armstrong {
         return d*d*d + arm(n / 10);
     }
 
+    public static boolean checkForArmstrongNumber(int n){
+        int original = n;
+        int sumOfDigitsCube = 0;
+
+        while(n!=0){
+            int digit=n%10;
+            sumOfDigitsCube += (digit*digit*digit);
+            n=n/10;
+        }
+        return original == sumOfDigitsCube;
+    }
+
     public static void main(String[] args) {
-        System.out.println(checkArmstrong(153));
-        arm(5);
+//        System.out.println(checkArmstrong(153));
+        System.out.println(checkForArmstrongNumber(417));
+//        arm(5);
     }
 }

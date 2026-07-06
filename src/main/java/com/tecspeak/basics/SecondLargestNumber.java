@@ -7,7 +7,7 @@ public class SecondLargestNumber {
         int secondLargest = -1;
 
         for (int i = 1; i < arr.length; i++) {
-
+ 
             if (arr[i] > largest) {
                 secondLargest = largest;
                 largest = arr[i];

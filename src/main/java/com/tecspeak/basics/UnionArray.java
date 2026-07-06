@@ -8,14 +8,11 @@ public class UnionArray {
 
         int union[] = new int[lengthOne + lengthTwo];
         int k = 0;
-
-        // Step 1: arrOne copy
         for (int i = 0; i < lengthOne; i++) {
             union[k] = arrOne[i];
             k++;
         }
 
-        // Step 2: arrTwo check using your nested loop logic
         for (int i = 0; i < lengthTwo; i++) {
 
             boolean found = false;

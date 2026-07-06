@@ -1,6 +1,6 @@
 package com.tecspeak.basics;
 
-public class LeapYear {
+public class LeafYear {
     static void leafYear(int n) {
         if (n % 100 == 0 && n % 400 == 0) {
             boolean check = true;
@@ -29,7 +29,7 @@ public class LeapYear {
 
         return false;
     }
-    static int checkleap(int )
+//    static int checkleap(int n )
 
     public static void main(String[] args) {
 //        leafYear(2000);
