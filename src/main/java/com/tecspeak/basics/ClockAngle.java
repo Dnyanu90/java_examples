@@ -13,7 +13,7 @@ public class ClockAngle {
     }
 
     public static void main(String[] args) {
-        getAngle(23,59);
+        getAngle(6,00);
 
     }
 
