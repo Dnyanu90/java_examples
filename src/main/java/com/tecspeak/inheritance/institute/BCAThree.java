@@ -43,6 +43,18 @@ public class BCAThree extends Student {
     public double getTotalMarks(double outOfTotalMarks) {
         return ((this.subOne + this.subTwo + this.subThree)/outOfTotalMarks)*100;
     }
+
+    public String getNameWithRollNo(){
+        return this.getStudentRollNo()+" "+this.getName();
+    }
+
+    private int getStudentRollNo(){
+        return this.getRollno();
+    }
+
+    protected String getStudentMarksAsString(double outOfTotalMarks){
+        return (this.subOne + this.subTwo + this.subThree)+"/"+outOfTotalMarks;
+    }
     /**
      * Method To Generate Report Card
      */
@@ -60,4 +72,8 @@ public class BCAThree extends Student {
         System.out.println("Percentage : "+this.getTotalMarks(300));
     }
 
+    public static void main(String[] args) {
+        BCAThree bcaThreeStudent = new BCAThree("ABC", 2, 60, 40, 50);
+        System.out.println(bcaThreeStudent.getNameWithRollNo());
+    }
 }
