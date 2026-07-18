@@ -5,15 +5,22 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test class for {@link Manager}.
+ *
+ * @author TecSpeak
+ */
 public class TestManager {
+
+    /**
+     * Tests the Manager pay calculation logic.
+     */
     @Test
-    public void TestManagerDetails(){
-        Manager manager=new Manager(2,6,"Dnyane", 4000.0);
-        manager.setDaysWorked(10);
-        String result=manager.getDetails();
-        assertEquals("6 Dnyane Team Size:2 4000.0", result);
-
+    public void TestManagerDetails() {
+        Manager manager = new Manager("Dnyane", 4000.0, 1000.0);
+        double result = manager.calculatePay();
+        
+        // Basic pay (4000) + Bonus (1000) = 5000
+        assertEquals(5000.0, result);
     }
-
-
 }

@@ -1,6 +1,23 @@
 package com.tecspeak.basics;
 
+/**
+ * Finds the Greatest Common Divisor (GCD) for an array of integers.
+ * <p>
+ * Evaluates the GCD cumulatively across all elements in the array
+ * using the Euclidean algorithm.
+ * </p>
+ *
+ * @author TecSpeak
+ */
 public class FindGCDInArray {
+
+    /**
+     * Computes the GCD of two integers.
+     *
+     * @param a the first number
+     * @param b the second number
+     * @return the greatest common divisor
+     */
     static int gcd(int a, int b) {
         while (b != 0) {
             int temp = b;
@@ -10,8 +27,17 @@ public class FindGCDInArray {
         return a;
     }
 
+    /**
+     * Main method demonstrating GCD calculation for an array.
+     * <p>
+     * Iterates through the array, computing the GCD of the current result
+     * with the next element.
+     * </p>
+     *
+     * @param args command-line arguments (not used)
+     */
      public static void main(String[] args) {
-        int[] arr = {4,8,6};
+        int[] arr = {4, 8, 6};
 
         int ans = arr[0];
 
@@ -21,5 +47,4 @@ public class FindGCDInArray {
 
         System.out.println(ans);
     }
-
 }

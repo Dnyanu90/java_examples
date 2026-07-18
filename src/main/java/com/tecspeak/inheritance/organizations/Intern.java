@@ -1,21 +1,36 @@
 package com.tecspeak.inheritance.organizations;
 
-public class Intern extends Employee{
-    private int duration;
+/**
+ * Represents an Intern in the organization.
+ * <p>
+ * Extends {@link Employee} but does not currently implement any additional
+ * properties or logic. Interns simply receive their base pay.
+ * </p>
+ *
+ * @author TecSpeak
+ */
+public class Intern extends Employee {
 
-    public Intern(int employee_Id, String name, int duration,double dailyRate) {
-        super(employee_Id, name,dailyRate);
-        this.duration = duration;
+    /**
+     * Constructs an Intern with a name and basic pay.
+     *
+     * @param name     the intern's name
+     * @param basicPay the intern's basic pay (stipend)
+     */
+    public Intern(String name, double basicPay) {
+        super(name, basicPay);
     }
 
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-    public String getDetails(){
-       return getEmployee_Id()+" "+getName()+" "+ getDuration()+"" + getDailyRate();
+    /**
+     * Calculates the pay for an intern.
+     * <p>
+     * Interns receive only their basic pay with no bonuses.
+     * </p>
+     *
+     * @return the total calculated pay
+     */
+    @Override
+    public double calculatePay() {
+        return getBasicPay();
     }
 }

@@ -1,60 +1,73 @@
 package com.tecspeak.inheritance.organizations;
 
-public class Employee {
+/**
+ * Represents an abstract employee in an organization.
+ * <p>
+ * This is the base class for different roles (e.g., Developer, Manager).
+ * It dictates that every employee must have a method to calculate their pay.
+ * </p>
+ *
+ * @author TecSpeak
+ */
+public abstract class Employee {
+
+    /** The employee's name. */
     private String name;
-    private int employee_Id;
-    private  double salary;
-    private double dailyRate;
-    private int daysWorked;
 
-    public Employee(int employee_Id, String name, double dailyRate) {
-        this.employee_Id = employee_Id;
+    /** The employee's base salary or pay rate. */
+    private double basicPay;
+
+    /**
+     * Constructs an Employee with a name and basic pay.
+     *
+     * @param name     the employee's name
+     * @param basicPay the base salary
+     */
+    public Employee(String name, double basicPay) {
         this.name = name;
-        this.dailyRate=dailyRate;
-        this.salary = 0;
+        this.basicPay = basicPay;
     }
 
-    public int getDaysWorked() {
-        return daysWorked;
-    }
-
-    public void setDaysWorked(int daysWorked) {
-        this.daysWorked = daysWorked;
-    }
-
-    public double calculateSalary(int days) {
-        return dailyRate * days;
-    }
-
-    public int getEmployee_Id() {
-        return employee_Id;
-    }
-
-    public void setEmployee_Id(int employee_Id) {
-        this.employee_Id = employee_Id;
-    }
-
+    /**
+     * Returns the employee's name.
+     *
+     * @return the name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Sets the employee's name.
+     *
+     * @param name the new name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
-    public double getSalary() {
-        return salary;
+    /**
+     * Returns the employee's basic pay.
+     *
+     * @return the basic pay
+     */
+    public double getBasicPay() {
+        return basicPay;
     }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
+    /**
+     * Sets the employee's basic pay.
+     *
+     * @param basicPay the new basic pay
+     */
+    public void setBasicPay(double basicPay) {
+        this.basicPay = basicPay;
     }
 
-    public double getDailyRate() {
-        return dailyRate;
-    }
-
-    public void setDailyRate(double dailyRate) {
-        this.dailyRate = dailyRate;
-    }
+    /**
+     * Calculates the total pay for the employee.
+     *
+     * @return the calculated pay amount
+     */
+    public abstract double calculatePay();
 }

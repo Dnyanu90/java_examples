@@ -3,23 +3,24 @@ package com.tecspeak.inheritance.organization;
 import com.tecspeak.inheritance.organizations.Intern;
 import org.junit.jupiter.api.Test;
 
-import java.security.PublicKey;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test class for {@link Intern}.
+ *
+ * @author TecSpeak
+ */
 public class TestIntern {
+
+    /**
+     * Tests the Intern pay calculation logic.
+     */
     @Test
-    public void TestInterDetails(){
-        Intern intern =new Intern(104,"Dnyane",4,600);
-         String result=intern.getDetails();
+    public void TestInterDetails() {
+        Intern intern = new Intern("Dnyane", 600.0);
+        double result = intern.calculatePay();
 
-         assertEquals("104 Dnyane 4600.0",result);
-    }
-
-    public void TestsInternDetails(){
-        Intern inter=new Intern(23,"Ram",5000,500);
-        String result=inter.getDetails();
-
-//        assertEquals("1);
+        // Interns receive only their basic pay
+        assertEquals(600.0, result);
     }
 }

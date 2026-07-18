@@ -1,22 +1,40 @@
 package com.tecspeak.inheritance.organizations;
 
+/**
+ * Represents a Manager in the organization.
+ * <p>
+ * Extends {@link Employee} and adds a specific bonus amount to their pay.
+ * </p>
+ *
+ * @author TecSpeak
+ */
 public class Manager extends Employee {
-  private int teamSize;
 
-    public Manager(int team_Size,int employee_Id, String name,double dailyRate) {
-        super(employee_Id, name,dailyRate);
-      this .teamSize=team_Size;
-    }
+    /** The bonus amount awarded to the manager. */
+    private double bouns;
 
-    public int getTeamSize() {
-        return teamSize;
-    }
-
-    public void setTeamSize(int teamSize){
-        this.teamSize=teamSize;
-    }
-    public String getDetails(){
-        return  getEmployee_Id()+" "+getName()+ " Team Size:"+getTeamSize()+" "+getDailyRate();
-    }
+    /**
+     * Constructs a Manager with a name, basic pay, and bonus.
+     *
+     * @param name     the manager's name
+     * @param basicPay the manager's basic pay
+     * @param bouns    the bonus amount
+     */
+    public Manager(String name, double basicPay, double bouns) {
+        super(name, basicPay);
+        this.bouns = bouns;
     }
 
+    /**
+     * Calculates the total pay for the manager.
+     * <p>
+     * Managers receive their basic pay plus their specified bonus.
+     * </p>
+     *
+     * @return the total calculated pay
+     */
+    @Override
+    public double calculatePay() {
+        return getBasicPay() + bouns;
+    }
+}

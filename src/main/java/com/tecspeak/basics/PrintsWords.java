@@ -1,18 +1,28 @@
 package com.tecspeak.basics;
 
+/**
+ * Converts numbers into their word representation, supporting both English (IN)
+ * and Marathi (MR) locales.
+ *
+ * @author TecSpeak
+ */
 public class PrintsWords {
-     static final String[] ONES = {
+
+    /** English words for numbers 0 to 19. */
+    static final String[] ONES = {
             "", "One", "Two", "Three", "Four", "Five",
             "Six", "Seven", "Eight", "Nine", "Ten",
             "Eleven", "Twelve", "Thirteen", "Fourteen",
             "Fifteen", "Sixteen", "Seventeen",
             "Eighteen", "Nineteen"};
+
+    /** English words for multiples of ten. */
     static final String[] TENS = {
             "", "", "Twenty", "Thirty", "Forty",
             "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"
     };
 
-    // Marathi words for numbers 0 to 99
+    /** Marathi words for numbers 0 to 99. */
     private static final String[] MARATHI_ONES = {
             "", "एक", "दोन", "तीन", "चार", "पाच", "सहा", "सात", "आठ", "नऊ", "दहा",
             "अकरा", "बारा", "तेरा", "चौदा", "पंधरा", "सोळा", "सतरा", "अठरा", "एकोणीस", "वीस",
@@ -26,10 +36,19 @@ public class PrintsWords {
             "एक्क्याण्णव", "ब्याण्णव", "त्र्याण्णव", "चौऱ्याण्णव", "पंच्याण्णव", "शहाण्णव", "सत्त्याण्णव", "अठ्ठ्याण्णव", "नव्व्याण्णव"
     };
 
-
+    /**
+     * Prints the word representation of a number based on the specified locale.
+     * <p>
+     * IN locale supports numbers up to 9999 in English.
+     * MR locale supports numbers up to 99 in Marathi.
+     * </p>
+     *
+     * @param num    the number to translate
+     * @param locale the locale string ("IN" for English, "MR" for Marathi)
+     */
     public static void printsNumbersToWords(int num, String locale) {
 
-        if (locale.equals("IN")){
+        if (locale.equals("IN")) {
             if (num < 20) {
                 System.out.println(ONES[num]);
             } else if (num < 100) {
@@ -49,14 +68,17 @@ public class PrintsWords {
                 System.out.println(ONES[thousandsDigit] + " Thousand " + ONES[hundredsDigit] + " Hundred " + TENS[tensDigit] + " " + ONES[unitDigit]);
             }
         } else if (locale.equals("MR")) {
-            if (num<100){
+            if (num < 100) {
                 System.out.println(MARATHI_ONES[num]);
             }
         }
-
-
     }
 
+    /**
+     * Main method demonstrating number translation in multiple locales.
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args) {
         printsNumbersToWords(89, "MR");
         printsNumbersToWords(105, "IN");
