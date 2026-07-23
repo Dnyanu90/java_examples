@@ -5,5 +5,4 @@ abstract class Animal {
         System.out.println(this.getClass().getSimpleName()+" is Eating");
     }
     abstract void sound();
-
 }
