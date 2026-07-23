@@ -1,4 +1,4 @@
-package com.tecspeak.basics.abstractAndInterface.animalsKingdom;
+package com.tecspeak.basics.abstractandinterface.animalsKingdom;
 
 public class Crocodile implements Swimmable {
     @Override
@@ -6,5 +6,3 @@ public class Crocodile implements Swimmable {
         System.out.println("Crocodile can swim");
     }
 }
-
-

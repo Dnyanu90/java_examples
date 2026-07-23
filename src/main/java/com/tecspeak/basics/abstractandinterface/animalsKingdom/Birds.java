@@ -1,4 +1,4 @@
-package com.tecspeak.basics.abstractAndInterface.animalsKingdom;
+package com.tecspeak.basics.abstractandinterface.animalsKingdom;
 
 public class Birds  extends  Animal{
     void sound(){

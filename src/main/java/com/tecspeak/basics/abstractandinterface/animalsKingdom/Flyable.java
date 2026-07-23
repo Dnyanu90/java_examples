@@ -1,4 +1,4 @@
-package com.tecspeak.basics.abstractAndInterface.animalsKingdom;
+package com.tecspeak.basics.abstractandinterface.animalsKingdom;
 
   interface Flyable {
     void fly();
