@@ -30,6 +30,11 @@ public class ArrayInitialization {
     int arr[] = {1, 2, 3, 4, 5, 6};
     String srt[] = {"Dog", "Cat", "Horse"};
 
+    for (String str : srt) {
+        System.out.println(str);
+    }
+       for (int value : arr)
+           System.out.println(value);
 
       //   Dynamic Initialization -->1D Array
 
