@@ -10,11 +10,14 @@ public class Permulation {
     }
     public static int countPermulation(int a,int b){
         int permulation=0;
-        for (int i=0;i<=a;i++){
-            for (int j=0;j<a;j++){
+        for (int i=1;i<=a;i++){
+            for (int j=i+1;j<=a;j++){
+                System.out.println(i+" "+j);
+                System.out.println(j+" "+i);
 
-                permulation=factorial(a)/factorial(a-b);
-                System.out.println(permulation);
+                permulation+=2;
+
+
             }
         }
         return permulation;
