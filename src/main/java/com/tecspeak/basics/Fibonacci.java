@@ -82,7 +82,7 @@ public class Fibonacci {
      * @param args command-line arguments (not used)
      */
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(Fibonacci.fibonacciSeries(-15)));
+        System.out.println(Arrays.toString(Fibonacci.fibonacciSeries(15)));
 //        System.out.println(Arrays.toString(Fibonacci.fibinacciSerisArr(5)));
     }
 
