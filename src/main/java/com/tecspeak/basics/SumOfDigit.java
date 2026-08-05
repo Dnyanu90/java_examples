@@ -22,13 +22,25 @@ public class SumOfDigit {
         return sum;
     }
 
+    public static int sum0fDigits(int n) {
+        int sum = 0;
+        String number = String.valueOf(n);
+        for (int i = 0; i < number.length(); i++) {
+            sum += number.charAt(i);
+        }
+        return sum;
+    }
+
+
     /**
      * Main method to demonstrate summing digits.
      *
      * @param args command-line arguments (not used)
      */
     public static void main(String[] args) {
+
         System.out.println(sum0fDigit(124));
+        System.out.println(sum0fDigits(124));
     }
 
 }

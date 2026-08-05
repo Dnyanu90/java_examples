@@ -58,6 +58,7 @@ public class ChessBoardPrintting {
 
 
         }
+        System.out.println("Have fun playing Chess");
     }
 
     /**
