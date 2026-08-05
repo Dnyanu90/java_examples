@@ -10,18 +10,20 @@ public class JavaEnums {
 }
 
 enum Day{
-    SUNDAY("Holiday") ,
-    MONDAY("working"),
-    TUESDAY("working"),
-    WEDNESDAY("working"),
-    THURSDAY("working"),
-    FRIDAY("working"),
-    SATURDAY("Holiday");
+    SUNDAY("off", 0) ,
+    MONDAY("working", 1),
+    TUESDAY("working", 2),
+    WEDNESDAY("working", 3),
+    THURSDAY("working", 4),
+    FRIDAY("working", 5),
+    SATURDAY("halfday", 6);
 
     private String weekDayType;
+    private int dayInWeek;
 
-    Day(String weekDayType) {
+    Day(String weekDayType, int dayInWeek) {
         this.weekDayType = weekDayType;
+        this.dayInWeek = dayInWeek;
     }
 
     public String getWeekDayType() {
