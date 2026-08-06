@@ -30,8 +30,7 @@ public class TrainTicket {
             else {
                 fare = distance * 15;
             }
-
-            // Print station names + fare
+            
             System.out.println("From: " + stations[start - 1]);
             System.out.println("To: " + stations[dest - 1]);
             System.out.println("Fare: ₹" + fare);
