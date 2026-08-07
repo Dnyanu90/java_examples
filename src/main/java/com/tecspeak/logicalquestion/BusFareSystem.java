@@ -1,9 +1,14 @@
 package com.tecspeak.logicalquestion;
 
+import com.tecspeak.exceptions.StartEndSameException;
+
 import java.util.Scanner;
 
 public class BusFareSystem {
     static void fareSystem(int start ,int dest){
+        if(start==dest){
+            throw new StartEndSameException("Gadi neet bagh");
+        }
         int ful1Fare=100;
         int distance=Math.abs(start-dest);
         if ((start==1 && dest ==10)|| start==10 && dest== 1){
