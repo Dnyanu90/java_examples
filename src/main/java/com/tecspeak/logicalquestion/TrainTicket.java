@@ -1,4 +1,4 @@
-package com.tecspeak.trainTicketProblem;
+package com.tecspeak.logicalquestion;
 
 import java.util.Scanner;
 
