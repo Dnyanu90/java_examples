@@ -1,7 +1,13 @@
 package com.tecspeak.basics.abstractandinterface.animalsKingdom;
 
 public class Mammal extends Animal{
-    void sound(){
-        System.out.println("Mammal Make Sound");
+    @Override
+    void eat() {
+        super.eat();
+    }
+
+    @Override
+    void sound() {
+        super.sound();
     }
 }

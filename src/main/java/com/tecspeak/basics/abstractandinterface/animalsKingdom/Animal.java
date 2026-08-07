@@ -1,8 +1,10 @@
 package com.tecspeak.basics.abstractandinterface.animalsKingdom;
 
-abstract class Animal {
+ class Animal {
     void eat() {
         System.out.println(this.getClass().getSimpleName()+" is Eating");
     }
-    abstract void sound();
+     void sound(){
+
+     }
 }
