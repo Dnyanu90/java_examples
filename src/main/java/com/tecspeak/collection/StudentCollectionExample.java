@@ -9,8 +9,14 @@ public class StudentCollectionExample {
         students.add(new Student(12, "Eahul"));
         students.add(new Student(13, "Vijay"));
         students.add(new Student(12, "Kumar"));
-        for (Student student :students){
-            System.out.println(student.getRoll()+" "+ student.getName());
+
+        int searchID = 13;
+        for (Student student : students) {
+
+            if (student.getRoll() == searchID) {
+                System.out.println("Student found");
+                System.out.println( "Roll Number :"+student.getRoll() + "  Name :" + student.getName());
+            }
         }
 
 
