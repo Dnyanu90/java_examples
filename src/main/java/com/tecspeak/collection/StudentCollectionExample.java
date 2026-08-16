@@ -6,16 +6,22 @@ import java.util.List;
 public class StudentCollectionExample {
     public static void main(String[] args) {
         List<Student> students = new ArrayList<>();
-        students.add(new Student(12, "Eahul"));
+        students.add(new Student(12, "Rahul"));
         students.add(new Student(13, "Vijay"));
         students.add(new Student(12, "Kumar"));
+        students.remove(0);  // delteting the 0th index of the Arraylist
+
+
+        for (Student student : students) {
+            System.out.println(student.getRoll() + "  " + student.getName());
+        }
 
         int searchID = 13;
         for (Student student : students) {
 
             if (student.getRoll() == searchID) {
                 System.out.println("Student found");
-                System.out.println( "Roll Number :"+student.getRoll() + "  Name :" + student.getName());
+                System.out.println("Roll Number :" + student.getRoll() + "  Name :" + student.getName());
             }
         }
 
