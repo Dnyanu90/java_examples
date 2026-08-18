@@ -10,14 +10,21 @@ public class LinkedListExample {
         student.add("Rahul");
         student.add("Pratik");
 
+
+
+
         // Add at First
         student.addFirst("Vikas");
 
         System.out.println(student);
 
+
         // Add Last
         student.addLast("Kumar");
         student.removeFirst();
+
+        // Add Element in  Specific position
+        student.add(1,"Pranav");
 
 
         // Remove First
