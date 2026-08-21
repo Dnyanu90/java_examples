@@ -1,0 +1,303 @@
+package com.basics.pratical;
+
+/**
+ * The ArrayOfString class demonstrates a simple array of strings and iterates
+ * through it using an enhanced for-each loop.
+ *
+ * <p>This class contains a static array of names and a main method that
+ * prints each name to the console output.</p>
+ *
+ * @author Tecspeak
+ * @version 1.0
+ * @since 2026-08-17
+ */
+public class ArrayOfString {
+
+    /**
+     * A static array containing a list of sample names.
+     *
+     * <p>The array includes the following names:
+     * <ul>
+     *   <li>Rahul</li>
+     *   <li>Amit</li>
+     *   <li>Vijay</li>
+     *   <li>Sagar</li>
+     * </ul>
+     */
+    public static String[] arrayOfString = {
+            "Rahul",
+            "Amit",
+            "Vijay",
+            "Sagar"
+    };
+
+    /**
+     * The entry point of the application.
+     *
+     * <p>This method iterates through the {@link #arrayOfString} array using
+     * an enhanced for-each loop and prints each name to the standard output
+     * stream.</p>
+     *
+     * @param args command-line arguments (not used in this implementation)
+     */
+    public static void main(String[] args) {
+
+        /**
+         * Enhanced for-each loop that iterates through each element
+         * in the arrayOfString array.
+         */
+        for (String name : arrayOfString) {
+            System.out.println(name);
+        }
+    }
+}
+
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+package com.basics.pratical;
+
+/**
+ * The ConstructorExample class demonstrates the use of constructors in Java.
+ *
+ * <p>This class contains two constructors:
+ * <ul>
+ *   <li>A default (no-argument) constructor that initializes the object with default values</li>
+ *   <li>A parameterized constructor that allows custom initialization of object properties</li>
+ * </ul>
+ *
+ * <p>The class also includes a display method to show the object's state
+ * and a main method to demonstrate both constructor implementations.</p>
+ *
+ * @author Tecspeak
+ * @version 1.0
+ * @since 2026-08-17
+ */
+public class ConstructorExaple {
+
+    /**
+     * The unique identifier for an employee.
+     *
+     * <p>This field stores the employee ID and is initialized
+     * by the constructors.</p>
+     */
+    int id;
+
+    /**
+     * The name of the employee.
+     *
+     * <p>This field stores the employee name and is initialized
+     * by the constructors.</p>
+     */
+    String name;
+
+    /**
+     * Default constructor that initializes the object with predefined values.
+     *
+     * <p>This constructor sets:
+     * <ul>
+     *   <li>ID to 101</li>
+     *   <li>Name to "Rahul"</li>
+     * </ul>
+     *
+     * @see #ConstructorExaple(int, String)
+     */
+    public ConstructorExaple() {
+        id = 101;
+        name = "Rahul";
+    }
+
+    /**
+     * Parameterized constructor that initializes the object with custom values.
+     *
+     * <p>This constructor allows the caller to specify both the employee ID and name
+     * during object creation, providing flexibility in initialization.</p>
+     *
+     * @param id   the employee ID to set
+     * @param name the employee name to set
+     *
+     * @see #ConstructorExaple()
+     */
+    public ConstructorExaple(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    /**
+     * Displays the employee details to the console.
+     *
+     * <p>This method prints the employee ID and name in a formatted manner
+     * to the standard output stream.</p>
+     */
+    void display() {
+        System.out.println("ID : " + id);
+        System.out.println("Name : " + name);
+    }
+
+    /**
+     * The entry point of the application.
+     *
+     * <p>This method demonstrates the usage of both constructors:
+     * <ol>
+     *   <li>Creates an employee using the default constructor (emp)</li>
+     *   <li>Creates an employee using the parameterized constructor (emp1)</li>
+     *   <li>Displays the details of both employees using the display method</li>
+     * </ol>
+     *
+     * @param args command-line arguments (not used in this implementation)
+     */
+    public static void main(String[] args) {
+        ConstructorExaple emp = new ConstructorExaple();
+        ConstructorExaple emp1 = new ConstructorExaple(101, "Vikas");
+        emp.display();
+        emp1.display();
+    }
+}
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+package com.basics.pratical;
+
+/**
+ * The DuplicateElement class finds and displays duplicate elements in an array
+ * along with their occurrence count.
+ *
+ * <p>This class demonstrates a nested loop approach to detect duplicates
+ * in an integer array. For each element, it counts how many times it appears
+ * in the array and prints the element along with its frequency if it occurs
+ * more than once.</p>
+ *
+ * <p><b>Note:</b> The current implementation may print duplicate entries
+ * multiple times. For example, if an element appears 3 times, it will be
+ * printed for each occurrence when it is encountered as the outer loop
+ * element.</p>
+ *
+ * @author Tecspeak
+ * @version 1.0
+ * @since 2026-08-17
+ */
+public class DuplicateElement {
+
+    /**
+     * The entry point of the application.
+     *
+     * <p>This method demonstrates finding duplicate elements in an array:
+     * <ol>
+     *   <li>Initializes an integer array with sample values containing duplicates</li>
+     *   <li>Uses nested loops to compare each element with subsequent elements</li>
+     *   <li>Counts the frequency of each element</li>
+     *   <li>Prints elements that appear more than once along with their count</li>
+     * </ol>
+     *
+     * <p><b>Example Output:</b>
+     * <pre>
+     * 10 = 2
+     * 20 = 2
+     * </pre>
+     *
+     * @param args command-line arguments (not used in this implementation)
+     */
+    public static void main(String[] args) {
+
+        /**
+         * Sample integer array containing duplicate values.
+         * Elements: 10 (appears twice), 20 (appears twice),
+         * 30 (appears once), 40 (appears once), 50 (appears once)
+         */
+        int[] arr = {10, 20, 30, 20, 40, 10, 50};
+
+        /**
+         * Outer loop iterates through each element of the array.
+         * The variable 'i' represents the current index being checked.
+         */
+        for (int i = 0; i < arr.length; i++) {
+
+            /**
+             * Counter to track the frequency of the current element.
+             * Initialized to 1 because the element itself counts as one occurrence.
+             */
+            int count = 1;
+
+            /**
+             * Inner loop compares the current element with all subsequent elements.
+             * The variable 'j' represents the index of elements to compare.
+             */
+            for (int j = i + 1; j < arr.length; j++) {
+
+                /**
+                 * If a match is found, increment the counter.
+                 * This detects duplicate occurrences of the current element.
+                 */
+                if (arr[i] == arr[j]) {
+                    count++;
+                }
+            }
+
+            /**
+             * If the element appears more than once, print it with its count.
+             * Condition: count > 1 indicates a duplicate element.
+             */
+            if (count > 1) {
+                System.out.println(arr[i] + " = " + count);
+            }
+        }
+    }
+}
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+package com.basics.pratical;
+
+/**
+ * The JaggedArray class demonstrates the creation and traversal of a jagged array
+ * (also known as a ragged array) in Java.
+ *
+ * A jagged array is a multidimensional array where each row can have a
+ * different number of columns. Unlike a rectangular array where all rows
+ * have the same length, jagged arrays provide flexibility in storing
+ * variable-length data.
+ *
+ * This class uses an enhanced for-each loop to iterate through the jagged
+ * array and display its contents in a matrix-like format.
+ *
+ * Array Structure:
+ * Row 0: [10, 20]           (2 columns)
+ * Row 1: [30, 40, 50]       (3 columns)
+ * Row 2: [60, 70, 80, 90]   (4 columns)
+ *
+ * @author Tecspeak
+ * @version 1.0
+ * @since 2026-08-17
+ */
+public class JaggedArray {
+
+    /**
+     * The entry point of the application.
+     *
+     * This method demonstrates the creation and traversal of a jagged array:
+     * 1. Creates a 2D jagged array with variable row lengths
+     * 2. Uses an enhanced for-each loop to iterate through each row
+     * 3. Uses a nested for-each loop to iterate through elements in each row
+     * 4. Prints the array elements in a matrix format
+     *
+     * Expected Output:
+     * 10 20
+     * 30 40 50
+     * 60 70 80 90
+     *
+     * @param args command-line arguments (not used in this implementation)
+     */
+    public static void main(String[] args) {
+        int[][] arr = {
+                {10, 20},
+                {30, 40, 50},
+                {60, 70, 80, 90}
+        };
+
+        for (int[] row : arr) {
+            for (int value : row) {
+                System.out.print(value + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------

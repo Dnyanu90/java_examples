@@ -32,7 +32,7 @@ public class MissingNumber {
             for (int j = 0; j < arr.length; j++) {
                 if (arr[j] == i) {
                     found = true;
-                    break;
+                    break; 
                 }
             }
             if (!found) {
