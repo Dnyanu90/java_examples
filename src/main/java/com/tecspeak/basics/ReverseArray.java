@@ -1,6 +1,8 @@
 package com.tecspeak.basics;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Reverses the elements of an integer array.
@@ -18,16 +20,20 @@ public class ReverseArray {
      *
      * @param arr the array to reverse
      */
-    public static void reverseArray(int arr[]) {
-        int reverse[] = new int[arr.length];
+    public static void reverseArray(Integer arr[]) {
+//        int reverse[] = new int[arr.length];
+//
+//        for (int i = arr.length - 1, j = 0; i >= 0; i--, j++) {
+//
+//            reverse[j] = arr[i];
+//
+//
+//        }
+        List<Integer> integerList = Arrays.asList(arr).reversed();
 
-        for (int i = arr.length - 1, j = 0; i >= 0; i--, j++) {
+//        Collections.reverse(Arrays.asList(arr));
+        System.out.println(integerList.toString());
 
-            reverse[j] = arr[i];
-
-
-        }
-        System.out.println(Arrays.toString(reverse));
     }
 
     /**
@@ -36,7 +42,7 @@ public class ReverseArray {
      * @param args command-line arguments (not used)
      */
     public static void main(String[] args) {
-        int arr[] = {5, 7, 4, 3, 56, 7};
+        Integer arr[] = {5, 7, 4, 3, 56, 7};
         reverseArray(arr);
     }
 }
