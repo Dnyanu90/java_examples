@@ -1,5 +1,7 @@
 package com.tecspeak.collection.studenthelpdesk;
 
+import java.util.Objects;
+
 public class Student {
     private  int roll;
     private String name;
@@ -53,5 +55,16 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", department='" + department + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Student student)) return false;
+        return roll == student.roll && Objects.equals(name, student.name) && Objects.equals(department, student.department) && Objects.equals(course, student.course);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(roll, name, department, course);
     }
 }
