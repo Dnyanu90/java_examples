@@ -34,6 +34,17 @@ public class LinkedListSimple {
         System.out.println("null");
 
     }
+    boolean search(int data){
+        Node current =head;
+        while (current!=null){
+            if (data==current.data){
+                return true;
+            }
+            current=current.next;
+        }
+
+        return false;
+    }
 
     public static void main(String[] args) {
         LinkedListSimple list=new LinkedListSimple();
