@@ -52,5 +52,6 @@ public class LinkedListSimple {
         list.add(20);
         list.add(30);
         list.display();
+        System.out.println(list.search(20));
     }
 }
