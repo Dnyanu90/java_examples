@@ -2,9 +2,9 @@ package com.tecspeak.collection.linkedlist;
 
 class Node{
     Node next;
-    int data;
+    Integer data;
 
-    public Node(int data) {
+    public Node(Integer data) {
         this.data = data;
         this.next = null;
     }
@@ -12,7 +12,7 @@ class Node{
 
 public class LinkedListSimple {
     Node head;
-    void add(int data){
+    void add(Integer data){
         Node newnode=new Node(data);
         if (head==null){
             head=newnode;
@@ -34,7 +34,7 @@ public class LinkedListSimple {
         System.out.println("null");
 
     }
-    boolean search(int data){
+    boolean search(Integer data){
         Node current =head;
         while (current!=null){
             if (data==current.data){
