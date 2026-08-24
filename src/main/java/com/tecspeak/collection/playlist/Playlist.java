@@ -3,8 +3,8 @@ package com.tecspeak.collection.playlist;
 public class Playlist {
     Song head;
 
-    void addSong(String name, String singerName, String company) {
-        Song newSong = new Song(name, singerName, company);
+    void addSong(String name, String singerName, String company,double duration,String album) {
+        Song newSong = new Song(name, singerName, company,duration,album);
         if (head == null) {
             head = newSong;
         } else {
@@ -24,6 +24,8 @@ public class Playlist {
             System.out.println("Song :" + current.name);
             System.out.println("Singer :" + current.singerName);
             System.out.println("Company :" + current.company);
+            System.out.println("Duration :" + current.duration);
+            System.out.println("Album :" + current.album);
             System.out.println("---------------------------");
 
             current = current.next;
@@ -53,20 +55,28 @@ class MusicPlayer {
         playlist.addSong(
                 "Manwa lage",
                 "Arijit Singh and Shreya Ghoshal",
-                "T-Series");
+                "T-Series",
+                4.34,
+                "Happy New Year (2014)");
 
         playlist.addSong(
                 "Heeriya",
                 "Jasleen Royal, Arijit Singh",
-                "Warner Music India / Meri Marzi Pictures LLP");
+                "Warner Music India / Meri Marzi Pictures LLP",
+                3.43,
+                "Heeriye (Single / Independent Release)");
 
         playlist.addSong(
                 "Tum Hi Ho",
                 "Arijit Singh"
-                , "T-Series");
+                , "T-Series",
+                4.23,
+                "Aashiqui 2 (2013)");
         playlist.addSong("Raataan Lambiyan",
                 "Jubin Nautiyal, Asees Kaur",
-                "Sony Music India");
+                "Sony Music India",
+                2.49,
+                "Shershaah (2021)");
 
         playlist.dispaly();
         playlist.searchSong("Tum Hi Ho");
