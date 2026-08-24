@@ -2,33 +2,57 @@ package com.tecspeak.collection.playlist;
 
 public class Playlist {
     Song head;
-    void addSong(String name){
-        Song newSong=new Song(name);
-        if (head==null){
-            head=newSong;
-        }else {
-            Song current=head;
-            while (current.next!=null){
-                current=current.next;
+
+    void addSong(String name, String singerName, String company) {
+        Song newSong = new Song(name, singerName, company);
+        if (head == null) {
+            head = newSong;
+        } else {
+            Song current = head;
+            while (current.next != null) {
+                current = current.next;
             }
-            current.next=newSong;
+            current.next = newSong;
         }
     }
-    void dispaly(){
-        Song current =head;
-        while (current!=null){
-            System.out.println(current.name);
-            current=current.next;
+
+    void dispaly() {
+        Song current = head;
+        int count =1;
+        while (current != null) {
+            System.out.println(count +": ");
+            System.out.println("Song :"+current.name);
+            System.out.println("Singer :"+current.singerName);
+            System.out.println("Company :"+current.company);
+            System.out.println("---------------------------");
+
+            current = current.next;
+            count=count+1;
         }
     }
 }
-class MusicPlayer{
+
+class MusicPlayer {
     public static void main(String[] args) {
-        Playlist playlist =new Playlist();
-        playlist.addSong("Manwa lage");
-        playlist.addSong("Heeriya");
-        playlist.addSong("Tum Hi Ho");
-        playlist.addSong("Phir Aur Kya Chahiye");
+        Playlist playlist = new Playlist();
+        playlist.addSong(
+                "Manwa lage",
+                "Arijit Singh and Shreya Ghoshal",
+                "T-Series");
+
+        playlist.addSong(
+                "Heeriya",
+                "Jasleen Royal, Arijit Singh",
+                "Warner Music India / Meri Marzi Pictures LLP");
+
+        playlist.addSong(
+                "Tum Hi Ho",
+                "Arijit Singh"
+                ,"T-Series");
+        playlist.addSong("Raataan Lambiyan",
+                "Jubin Nautiyal, Asees Kaur",
+                "Sony Music India");
+
         playlist.dispaly();
 
 
