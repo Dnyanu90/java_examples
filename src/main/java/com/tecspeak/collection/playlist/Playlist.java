@@ -18,18 +18,33 @@ public class Playlist {
 
     void dispaly() {
         Song current = head;
-        int count =1;
+        int count = 1;
         while (current != null) {
-            System.out.println(count +": ");
-            System.out.println("Song :"+current.name);
-            System.out.println("Singer :"+current.singerName);
-            System.out.println("Company :"+current.company);
+            System.out.println(count + ": ");
+            System.out.println("Song :" + current.name);
+            System.out.println("Singer :" + current.singerName);
+            System.out.println("Company :" + current.company);
             System.out.println("---------------------------");
 
             current = current.next;
-            count=count+1;
+          count++;
         }
+
+        System.out.println("Total Songs :"+(count-1));
     }
+
+    void searchSong(String searchName){
+        Song current =head;
+        while(current !=null){
+            if (current.name.equals(searchName)){
+                System.out.println("Song Status :"+"Song Found");
+                return;
+            }
+            current =current.next;
+        }
+        System.out.println("Song Status :"+"Song Not Found");
+    }
+
 }
 
 class MusicPlayer {
@@ -48,12 +63,13 @@ class MusicPlayer {
         playlist.addSong(
                 "Tum Hi Ho",
                 "Arijit Singh"
-                ,"T-Series");
+                , "T-Series");
         playlist.addSong("Raataan Lambiyan",
                 "Jubin Nautiyal, Asees Kaur",
                 "Sony Music India");
 
         playlist.dispaly();
+        playlist.searchSong("Tum Hi Ho");
 
 
     }
