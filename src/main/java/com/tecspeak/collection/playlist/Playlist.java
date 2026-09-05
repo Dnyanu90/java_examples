@@ -38,7 +38,7 @@ public class Playlist {
     void searchSong(String searchName){
         Song current =head;
         while(current !=null){
-            if (current.name.equals(searchName)){
+            if ((current.name.equals(searchName)) || current.singerName.equals(searchName)){
                 System.out.println("Song Status :"+"Song Found");
                 return;
             }
@@ -79,7 +79,7 @@ class MusicPlayer {
                 "Shershaah (2021)");
 
         playlist.dispaly();
-        playlist.searchSong("Tum Hi Ho");
+        playlist.searchSong("Arijit Singh");
 
 
     }
