@@ -1,5 +1,8 @@
 package com.tecspeak.basics;
 
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
 /**
  * Separates zeroes from non-zero elements in an array.
  * <p>
@@ -18,25 +21,31 @@ public class SepareteZero {
      */
     public static void separateZero(int arr[]) {
 
-        int result[] = new int[arr.length];
-        int k = 0;
+//        int result[] = new int[arr.length];
+//        int k = 0;
+//
+//        for (int i = 0; i < arr.length; i++) {
+//            if (arr[i] != 0) {
+//                result[k] = arr[i];
+//                k++;
+//            }
+//        }
+//        for (int i = 0; i < arr.length; i++) {
+//            if (arr[i] == 0) {
+//                result[k] = arr[i];
+//                k++;
+//            }
+//        }
+//        for (int i = 0; i < result.length; i++) {
+//            System.out.print(result[i] + " ");
+//        }
+//        System.out.println();
+        int[] result = IntStream.concat(
+                Arrays.stream(arr).filter(n -> n != 0),
+                Arrays.stream(arr).filter(n -> n == 0)
+        ).toArray();
 
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != 0) {
-                result[k] = arr[i];
-                k++;
-            }
-        }
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 0) {
-                result[k] = arr[i];
-                k++;
-            }
-        }
-        for (int i = 0; i < result.length; i++) {
-            System.out.print(result[i] + " ");
-        }
-        System.out.println();
+        System.out.println(Arrays.toString(result));
     }
 
     /**

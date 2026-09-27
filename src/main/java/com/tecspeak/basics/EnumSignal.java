@@ -1,5 +1,7 @@
 package com.tecspeak.basics;
 
+import java.util.Locale;
+
 enum Signal {
     RED("Stop", 30){
         void behave(){
@@ -40,12 +42,24 @@ enum Signal {
 }
 
 public class EnumSignal {
+    static  void ProcessSignal(String input){
+        try{
+            Signal s=Signal.valueOf(input.toUpperCase());
+            s.show();
+            s.behave();
+            System.out.println(s.getAction());
+            System.out.println(s.getTime());
+        }catch (IllegalArgumentException e){
+            System.out.println("Invalid Siganl Name!");
+        }catch (Exception e){
+            System.out.println("Unknows Errors");
+        }finally {
+            System.out.println("----Process End----");
+        }
+    }
     public static void main(String[] args) {
-        Signal s= Signal.RED;
-        s.show();
-        s.behave();
-        System.out.println(s.getAction());
-        System.out.println(s.getTime());
-        System.out.println();
+
+        ProcessSignal("Yellow");
+
     }
 }
